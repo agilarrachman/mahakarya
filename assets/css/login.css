@@ -4,18 +4,23 @@
 	box-sizing: border-box;
 }
 
-body{
-    font-family: 'Poppins', sans-serif;
+body.login-page{
+    font-family: 'Poppins', sans-serif !important;
     overflow: hidden;
+    color: #f7fbff !important;
+}
+
+body.login-page.gradient-surface {
+    background: linear-gradient(135deg, #021b79, #0575e6 60%, #33c5ff) !important;
 }
 
 .login-page{
-    min-height: 100vh;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
 }
 
 .login-shell{
@@ -30,9 +35,9 @@ body{
 .login-card{
     width: 100%;
     max-width: 1100px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-    background: rgba(7, 13, 32, 0.7);
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr)) !important;
+    background: rgba(7, 13, 32, 0.7) !important;
     border-radius: 36px;
     padding: 40px 50px;
     gap: 32px;
@@ -75,7 +80,7 @@ body{
 }
 
 .glassy-panel{
-    background: rgba(5, 20, 48, 0.7);
+    background: rgba(5, 20, 48, 0.7) !important;
     border-radius: 28px;
     padding: 2.5rem 2.5rem;
     box-shadow: 0 25px 45px rgba(2, 27, 121, 0.35);
@@ -83,11 +88,19 @@ body{
     width: 100%;
     max-width: 420px;
     text-align: center;
-    color: #f7fbff;
+    color: #f7fbff !important;
 }
 .login-avatar{
     height: 96px;
     margin-bottom: 10px;
+}
+
+.title{
+    color: #f7fbff !important;
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 .wave{
