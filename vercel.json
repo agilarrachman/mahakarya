@@ -4,28 +4,28 @@
     {
       "src": "index.php",
       "use": "@vercel/php"
-    },
-    {
-      "src": "application/**/*.php",
-      "use": "@vercel/php"
-    },
-    {
-      "src": "system/**/*.php",
-      "use": "@vercel/php"
     }
   ],
   "routes": [
     {
       "src": "/assets/(.*)",
-      "dest": "/assets/$1"
+      "dest": "/assets/$1",
+      "continue": true
     },
     {
       "src": "/photo/(.*)",
-      "dest": "/photo/$1"
+      "dest": "/photo/$1",
+      "continue": true
     },
     {
       "src": "/database/(.*)",
-      "dest": "/database/$1"
+      "dest": "/database/$1",
+      "continue": true
+    },
+    {
+      "src": "/(.*\\.(css|js|jpg|jpeg|png|gif|svg|ico|woff|woff2|ttf|eot|pdf|zip))",
+      "dest": "/$1",
+      "continue": true
     },
     {
       "src": "/(.*)",
@@ -36,4 +36,3 @@
     "CI_ENV": "production"
   }
 }
-
