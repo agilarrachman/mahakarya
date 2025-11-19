@@ -242,8 +242,10 @@
                <div class="team row">
                   <div class="team-memeber col-md-6 col-lg-4 col-xl-3">
                      <div class="card">
-                        <div class="TopImg">
-                           <img src="<?php echo base_url(); ?>assets/img/logogaji.png" class="rounded-circle w-100 d-block">
+                        <div class="TopImg" style="display: flex; align-items: center; justify-content: center; padding: 20px; background: transparent;">
+                           <img src="<?php echo base_url(); ?>assets/img/logo.jpg" 
+                                class="rounded-square d-block" 
+                                style="max-width: 100%; height: auto; object-fit: contain; max-height: 300px;">
                         </div>
                         <div class="TeamInfo text-center">
                            <div class="Name">PT MAHAKARYA KELOMPOK 1</div>
