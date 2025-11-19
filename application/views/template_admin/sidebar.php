@@ -11,7 +11,7 @@
         <?php 
         $logo_path = base_url('assets/img/logo.png');
         if (!file_exists('./assets/img/logo.png')) {
-          $logo_path = base_url('assets/img/logogaji.png');
+          $logo_path = base_url('assets/img/logo.jpg');
         }
         ?>
         <img src="<?php echo $logo_path; ?>" alt="Logo" class="sidebar-brand-icon" style="height: 40px; width: auto; margin-right: 8px;">
@@ -128,7 +128,7 @@
           <?php 
           $logo_path = base_url('assets/img/logo.png');
           if (!file_exists('./assets/img/logo.png')) {
-            $logo_path = base_url('assets/img/logogaji.png');
+            $logo_path = base_url('assets/img/logo.jpg');
           }
           ?>
           <img src="<?php echo $logo_path; ?>" alt="Logo" style="height: 35px; width: auto; margin-right: 12px;">

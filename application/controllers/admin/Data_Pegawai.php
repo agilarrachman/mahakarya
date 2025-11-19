@@ -132,6 +132,10 @@ class Data_Pegawai extends CI_Controller {
 			$tanggal_masuk	= $this->input->post('tanggal_masuk');
 			$status			= $this->input->post('status');
 			$hak_akses		= $this->input->post('hak_akses');
+			// Ambil foto lama dulu sebelum update
+			$old_photo_query = $this->db->query("SELECT photo FROM data_pegawai WHERE id_pegawai='$id'");
+			$old_photo = $old_photo_query->num_rows() > 0 ? $old_photo_query->row()->photo : '';
+			
 			$photo = '';
 			if(!empty($_FILES['photo']['name'])){
 				// Pastikan folder photo ada dan writable
@@ -147,11 +151,9 @@ class Data_Pegawai extends CI_Controller {
 				if($this->upload->do_upload('photo')){
 					$photo = $this->upload->data('file_name');
 					// Hapus foto lama jika ada
-					$old_photo = $this->db->query("SELECT photo FROM data_pegawai WHERE id_pegawai='$id'")->row()->photo;
 					if(!empty($old_photo) && file_exists($upload_path.$old_photo)){
-						unlink($upload_path.$old_photo);
+						@unlink($upload_path.$old_photo);
 					}
-					$data['photo'] = $photo;
 				}else{
 					$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
 						<strong>Photo Gagal Diupload! '.$this->upload->display_errors().'</strong>
@@ -174,6 +176,11 @@ class Data_Pegawai extends CI_Controller {
 				'status' 		=> $status,
 				'hak_akses' 	=> $hak_akses,
 			);
+			
+			// Update foto hanya jika ada foto baru
+			if(!empty($photo)){
+				$data['photo'] = $photo;
+			}
 
 			$where = array(
 				'id_pegawai' => $id

@@ -44,11 +44,17 @@
                   <td>Pegawai</td>
                 <?php } ?>
               <td class="text-center">
-                <?php if(!empty($p->photo) && file_exists('./photo/'.$p->photo)): ?>
-                  <img src="<?php echo base_url('photo/'.$p->photo); ?>" 
+                <?php 
+                $photo_path = '';
+                $photo_file = FCPATH . 'photo/' . $p->photo;
+                if(!empty($p->photo) && file_exists($photo_file)): 
+                  $photo_path = base_url('photo/'.$p->photo) . '?v=' . filemtime($photo_file);
+                ?>
+                  <img src="<?php echo $photo_path; ?>" 
                        alt="<?php echo $p->nama_pegawai; ?>" 
                        class="img-thumbnail rounded-circle" 
-                       style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #dee2e6;">
+                       style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #dee2e6;"
+                       onerror="this.src='<?php echo base_url('assets/img/avatar.svg'); ?>'">
                 <?php else: ?>
                   <img src="<?php echo base_url('assets/img/avatar.svg'); ?>" 
                        alt="No Photo" 
