@@ -55,7 +55,12 @@ class Data_Pegawai extends CI_Controller {
 			$hak_akses		= $this->input->post('hak_akses');
 			$photo = '';
 			if(!empty($_FILES['photo']['name'])){
-				$config['upload_path'] 		= './photo';
+				// Pastikan folder photo ada dan writable
+				$upload_path = FCPATH . 'photo/';
+				if (!is_dir($upload_path)) {
+					mkdir($upload_path, 0777, true);
+				}
+				$config['upload_path'] 		= $upload_path;
 				$config['allowed_types'] 	= 'jpg|jpeg|png|tiff';
 				$config['max_size']			= 2048;
 				$config['file_name']		= 'pegawai-'.date('ymd').'-'.substr(md5(rand()),0,10);
@@ -129,7 +134,12 @@ class Data_Pegawai extends CI_Controller {
 			$hak_akses		= $this->input->post('hak_akses');
 			$photo = '';
 			if(!empty($_FILES['photo']['name'])){
-				$config['upload_path'] 		= './photo';
+				// Pastikan folder photo ada dan writable
+				$upload_path = FCPATH . 'photo/';
+				if (!is_dir($upload_path)) {
+					mkdir($upload_path, 0777, true);
+				}
+				$config['upload_path'] 		= $upload_path;
 				$config['allowed_types'] 	= 'jpg|jpeg|png|tiff';
 				$config['max_size']			= 2048;
 				$config['file_name']		= 'pegawai-'.date('ymd').'-'.substr(md5(rand()),0,10);
@@ -138,8 +148,8 @@ class Data_Pegawai extends CI_Controller {
 					$photo = $this->upload->data('file_name');
 					// Hapus foto lama jika ada
 					$old_photo = $this->db->query("SELECT photo FROM data_pegawai WHERE id_pegawai='$id'")->row()->photo;
-					if(!empty($old_photo) && file_exists('./photo/'.$old_photo)){
-						unlink('./photo/'.$old_photo);
+					if(!empty($old_photo) && file_exists($upload_path.$old_photo)){
+						unlink($upload_path.$old_photo);
 					}
 					$data['photo'] = $photo;
 				}else{

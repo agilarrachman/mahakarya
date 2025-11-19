@@ -7,8 +7,15 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion gradient-header" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-        <div class="sidebar-brand-text mx-3 text-center text-white">PT MAHAKARYA KELOMPOK 1</div>
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('pegawai/dashboard'); ?>">
+        <?php 
+        $logo_path = base_url('assets/img/logo.png');
+        if (!file_exists('./assets/img/logo.png')) {
+          $logo_path = base_url('assets/img/logogaji.png');
+        }
+        ?>
+        <img src="<?php echo $logo_path; ?>" alt="Logo" class="sidebar-brand-icon" style="height: 40px; width: auto; margin-right: 8px;">
+        <div class="sidebar-brand-text mx-2 text-white text-center" style="font-size: 0.9rem;">PT MAHAKARYA KELOMPOK 1</div>
       </a>
 
       <!-- Divider -->
@@ -82,6 +89,13 @@
             <i class="fa fa-bars"></i>
           </button>
 
+          <?php 
+          $logo_path = base_url('assets/img/logo.png');
+          if (!file_exists('./assets/img/logo.png')) {
+            $logo_path = base_url('assets/img/logogaji.png');
+          }
+          ?>
+          <img src="<?php echo $logo_path; ?>" alt="Logo" style="height: 35px; width: auto; margin-right: 12px;">
           <h4 class="font-weight-bold text-white m-0">PT Mahakarya Kelompok 1</h4>
 
           <!-- Topbar Navbar -->
