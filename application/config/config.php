@@ -23,7 +23,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/penggajian/';
+// Auto-detect base URL from environment or use default
+$base_url = getenv('RENDER_EXTERNAL_URL');
+if (empty($base_url)) {
+	$base_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/';
+}
+$config['base_url'] = $base_url;
 
 /*
 |--------------------------------------------------------------------------

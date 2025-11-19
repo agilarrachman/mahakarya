@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: mahakarya-kelompok1
+    runtime: php
+    plan: free
+    buildCommand: ""
+    startCommand: php -S 0.0.0.0:$PORT -t .
+    envVars:
+      - key: CI_ENV
+        value: production
+      - key: PHP_VERSION
+        value: 8.2
+    env:
+      CI_ENV: production
+
+databases:
+  - name: penggajian-db
+    plan: free
+    databaseName: penggajian
+    user: penggajian_user
+
