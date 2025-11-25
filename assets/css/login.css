@@ -243,19 +243,19 @@ a:hover{
 
 @media screen and (max-width: 900px){
     .login-card{
-        grid-template-columns: 1fr;
+		grid-template-columns: 1fr;
         padding: 32px 24px;
-    }
+	}
 
     .login-illustration{
         order: 2;
-    }
+	}
 
     .login-form-wrapper{
         order: 1;
-    }
+	}
 
     .login-illustration img{
         max-width: 280px;
-    }
+	}
 }
