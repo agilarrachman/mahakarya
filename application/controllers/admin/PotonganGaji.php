@@ -24,33 +24,33 @@ class PotonganGaji extends CI_Controller
 
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');
-        $this->load->view('admin/PotonganGaji/list_potonganGaji', $data);
+        $this->load->view('admin/potongan_gaji/list_potonganGaji', $data);
         $this->load->view('template_admin/footer');
     }
 
     function TampilPotongan()
     {
         $data['hasil'] = $this->ModelPotongan_Gaji->TampilPotongan();
-        $this->load->view('admin/PotonganGaji/data_potonganGaji', $data);
+        $this->load->view('admin/potongan_gaji/data_potonganGaji', $data);
     }
 
     function tambah_potonganGaji()
     {
         $aksi = $this->input->post('aksi');
-        $this->load->view('admin/PotonganGaji/tambah_potonganGaji', $aksi);
+        $this->load->view('admin/potongan_gaji/tambah_potonganGaji', $aksi);
     }
 
     function edit_potonganGaji()
     {
         $potongan = $this->input->post('potongan');
         $data['hasil'] = $this->ModelPotongan_Gaji->Getpotongan($potongan);
-        $this->load->view('admin/PotonganGaji/edit_potonganGaji', $data);
+        $this->load->view('admin/potongan_gaji/edit_potonganGaji', $data);
     }
     function hapus_potonganGaji()
     {
         $potongan = $this->input->post('potongan');
         $data['hasil'] = $this->ModelPotongan_Gaji->Getpotongan($potongan);
-        $this->load->view('admin/PotonganGaji/hapus_potonganGaji', $data);
+        $this->load->view('admin/potongan_gaji/hapus_potonganGaji', $data);
     }
 
     function simpanPotongan()

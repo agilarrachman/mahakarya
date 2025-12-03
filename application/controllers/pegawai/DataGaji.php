@@ -33,7 +33,7 @@ class DataGaji extends CI_Controller
 
 		$this->load->view('template_pegawai/header', $data);
 		$this->load->view('template_pegawai/sidebar');
-		$this->load->view('pegawai/DataGaji', $data);
+		$this->load->view('pegawai/data_gaji', $data);
 		$this->load->view('template_pegawai/footer');
 	}
 
