@@ -92,7 +92,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('ganti_password') ?>">
+        <a class="nav-link" href="<?php echo base_url('GantiPassword') ?>">
           <i class="fas fa-fw fa-lock"></i>
           <span>Ubah Password</span></a>
       </li>

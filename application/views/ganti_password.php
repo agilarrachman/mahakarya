@@ -8,7 +8,7 @@
 
   <div class="card" style="width: 40%">
   	<div class="card-body">
-  		<form method="POST" action="<?php echo base_url('ganti_password/ganti_password_aksi')?>">
+  		<form method="POST" action="<?php echo base_url('GantiPassword/ganti_password_aksi')?>">
   			
   			<div class="form-grup">
   				<label>Password Baru</label>
