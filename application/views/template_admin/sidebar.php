@@ -8,7 +8,7 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('admin/dashboard'); ?>">
-        <?php 
+        <?php
         $logo_path = base_url('assets/img/logo.png');
         if (!file_exists('./assets/img/logo.png')) {
           $logo_path = base_url('assets/img/logo.jpg');
@@ -36,8 +36,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url('admin/data_pegawai') ?>">Data Pegawai</a>
-            <a class="collapse-item" href="<?php echo base_url('admin/data_jabatan') ?>">Data Jabatan</a>
+            <a class="collapse-item" href="<?php echo base_url('admin/DataPegawai') ?>">Data Pegawai</a>
+            <a class="collapse-item" href="<?php echo base_url('admin/DataJabatan') ?>">Data Jabatan</a>
           </div>
         </div>
       </li>
@@ -50,9 +50,9 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url('admin/data_absensi') ?>">Data Absensi</a>
-            <a class="collapse-item" href="<?php echo base_url('admin/potongan_gaji') ?>">Setting Potongan Gaji</a>
-            <a class="collapse-item" href="<?php echo base_url('admin/data_penggajian') ?>">Data Gaji</a>
+            <a class="collapse-item" href="<?php echo base_url('admin/DataAbsensi') ?>">Data Absensi</a>
+            <a class="collapse-item" href="<?php echo base_url('admin/PotonganGaji') ?>">Setting Potongan Gaji</a>
+            <a class="collapse-item" href="<?php echo base_url('admin/DataPenggajian') ?>">Data Gaji</a>
           </div>
         </div>
       </li>
@@ -65,9 +65,9 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url('admin/laporan_gaji') ?>">Laporan Gaji</a>
-            <a class="collapse-item" href="<?php echo base_url('admin/laporan_absensi') ?>">Laporan Absensi</a>
-            <a class="collapse-item" href="<?php echo base_url('admin/slip_gaji') ?>">Slip Gaji</a>
+            <a class="collapse-item" href="<?php echo base_url('admin/LaporanGaji') ?>">Laporan Gaji</a>
+            <a class="collapse-item" href="<?php echo base_url('admin/LaporanAbsensi') ?>">Laporan Absensi</a>
+            <a class="collapse-item" href="<?php echo base_url('admin/SlipGaji') ?>">Slip Gaji</a>
           </div>
         </div>
       </li>
@@ -98,7 +98,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('login/logout')?>">
+        <a class="nav-link" href="<?php echo base_url('login/logout') ?>">
           <i class="fas fa-fw fa-sign-out-alt"></i>
           <span>Logout</span></a>
       </li>
@@ -125,7 +125,7 @@
             <i class="fa fa-bars"></i>
           </button>
 
-          <?php 
+          <?php
           $logo_path = base_url('assets/img/logo.png');
           if (!file_exists('./assets/img/logo.png')) {
             $logo_path = base_url('assets/img/logo.jpg');
@@ -148,10 +148,10 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-white small">Selamat Datang <?php echo $this->session->userdata('nama_pegawai')?></span>
-                <img class="img-profile rounded-circle" src="<?php echo base_url('photo/').$this->session->userdata('photo') ?>">
+                <span class="mr-2 d-none d-lg-inline text-white small">Selamat Datang <?php echo $this->session->userdata('nama_pegawai') ?></span>
+                <img class="img-profile rounded-circle" src="<?php echo base_url('photo/') . $this->session->userdata('photo') ?>">
               </a>
-              
+
             </li>
 
           </ul>

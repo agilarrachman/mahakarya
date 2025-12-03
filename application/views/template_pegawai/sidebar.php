@@ -8,7 +8,7 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('pegawai/dashboard'); ?>">
-        <?php 
+        <?php
         $logo_path = base_url('assets/img/logo.png');
         if (!file_exists('./assets/img/logo.png')) {
           $logo_path = base_url('assets/img/logo.jpg');
@@ -30,7 +30,7 @@
 
 
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('pegawai/data_gaji') ?>">
+        <a class="nav-link" href="<?php echo base_url('pegawai/DataGaji') ?>">
           <i class="fas fa-fw fa-money-check-alt"></i>
           <span>Data Gaji</span></a>
       </li>
@@ -55,14 +55,14 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('pegawai/ganti_password') ?>">
+        <a class="nav-link" href="<?php echo base_url('pegawai/GantiPassword') ?>">
           <i class="fas fa-fw fa-lock"></i>
           <span>Ubah Password</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('login/logout')?>">
+        <a class="nav-link" href="<?php echo base_url('login/logout') ?>">
           <i class="fas fa-fw fa-sign-out-alt"></i>
           <span>Logout</span></a>
       </li>
@@ -89,7 +89,7 @@
             <i class="fa fa-bars"></i>
           </button>
 
-          <?php 
+          <?php
           $logo_path = base_url('assets/img/logo.png');
           if (!file_exists('./assets/img/logo.png')) {
             $logo_path = base_url('assets/img/logo.jpg');
@@ -112,10 +112,10 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-white small">Selamat Datang <?php echo $this->session->userdata('nama_pegawai')?></span>
-                <img class="img-profile rounded-circle" src="<?php echo base_url('photo/').$this->session->userdata('photo') ?>">
+                <span class="mr-2 d-none d-lg-inline text-white small">Selamat Datang <?php echo $this->session->userdata('nama_pegawai') ?></span>
+                <img class="img-profile rounded-circle" src="<?php echo base_url('photo/') . $this->session->userdata('photo') ?>">
               </a>
-              
+
             </li>
 
           </ul>
